@@ -1,0 +1,42 @@
+@import "tailwindcss";
+
+@theme {
+  /* Colors */
+  --color-orange-500: hsl(25, 97%, 53%);
+  --color-grey-500: hsl(217, 12%, 63%);
+  --color-grey-900: hsl(213, 19%, 18%);
+  --color-grey-950: hsl(216, 12%, 8%);
+
+  /* Typography */
+  --font-overpass: "Overpass", ui-sans-serif, system-ui, sans-serif;
+
+  /* Breakpoints */
+  --breakpoint-mobile: 375px;
+  --breakpoint-desktop: 1440px;
+}
+
+@layer base {
+  html {
+    font-family: var(--font-overpass);
+    font-size: 15px;
+    /* Paragraph base size */
+    color: var(--color-white);
+    background-color: var(--color-grey-950);
+  }
+
+  body {
+    /* Ensuring the font weights are available */
+    font-weight: 400;
+  }
+
+  strong,
+  b {
+    font-weight: 700;
+  }
+}
+
+@layer components {
+  .rating-btn {
+    @apply w-10.5 h-10.5 sm:w-12.5 sm:h-12.5 rounded-full bg-grey-950 text-grey-500 font-bold pt-1 transition-colors hover:bg-orange-500 hover:text-white focus:bg-white focus:text-grey-950 cursor-pointer;
+  }
+}
